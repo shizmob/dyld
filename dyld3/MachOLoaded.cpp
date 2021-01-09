@@ -35,9 +35,9 @@
 #include <mach-o/reloc.h>
 #include <mach-o/nlist.h>
 extern "C" {
-  #include <corecrypto/ccdigest.h>
-  #include <corecrypto/ccsha1.h>
-  #include <corecrypto/ccsha2.h>
+ // #include <corecrypto/ccdigest.h>
+//  #include <corecrypto/ccsha1.h>
+//  #include <corecrypto/ccsha2.h>
 }
 
 #include "MachOFile.h"
@@ -796,7 +796,7 @@ const uint8_t* MachOLoaded::trieWalk(Diagnostics& diag, const uint8_t* start, co
 
 void MachOLoaded::forEachCDHashOfCodeSignature(const void* codeSigStart, size_t codeSignLen,
                                                void (^callback)(const uint8_t cdHash[20])) const
-{
+{/*
     forEachCodeDirectoryBlob(codeSigStart, codeSignLen, ^(const void *cdBuffer) {
         const CS_CodeDirectory* cd = (const CS_CodeDirectory*)cdBuffer;
         uint32_t cdLength = htonl(cd->length);
@@ -838,7 +838,7 @@ void MachOLoaded::forEachCDHashOfCodeSignature(const void* codeSigStart, size_t 
             callback(cdHash);
             return;
         }
-    });
+    });*/
 }
 
 

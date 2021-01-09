@@ -34,8 +34,8 @@
 //#include <_simple.h>
 
 extern "C" {
-  #include <corecrypto/ccdigest.h>
-  #include <corecrypto/ccsha2.h>
+ // #include <corecrypto/ccdigest.h>
+ // #include <corecrypto/ccsha2.h>
 }
 
 #include "Closure.h"
