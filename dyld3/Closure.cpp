@@ -31,7 +31,7 @@
 #include <sys/stat.h>
 #include <sys/sysctl.h>
 #include <System/machine/cpu_capabilities.h>
-#include <_simple.h>
+//#include <_simple.h>
 
 extern "C" {
   #include <corecrypto/ccdigest.h>
@@ -1306,7 +1306,7 @@ void LaunchClosure::duplicateClassesHashTable(const ObjCClassDuplicatesOpt*& dup
 static bool getContainerLibraryCachesDir(const char* envp[], char libCacheDir[])
 {
     // $HOME is root of writable data container
-    const char* homeDir = _simple_getenv(envp, "HOME");
+    const char* homeDir = getenv("HOME");
     if ( homeDir == nullptr )
         return false;
 
