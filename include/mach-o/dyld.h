@@ -31,6 +31,12 @@
 #include <mach-o/loader.h>
 #include <Availability.h>
 
+/* XXX: hack for broken availability macros */
+#undef __API_AVAILABLE
+#undef __API_UNAVAILABLE
+#define __API_AVAILABLE(...)
+#define __API_UNAVAILABLE(...)
+
 #if __cplusplus
 extern "C" {
 #endif 
