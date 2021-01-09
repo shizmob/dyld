@@ -35,7 +35,7 @@
 #include <mach/mach.h>
 #if !TARGET_OS_SIMULATOR && !TARGET_OS_DRIVERKIT
   #include <sandbox.h>
-  #include <sandbox/private.h>
+  //#include <sandbox/private.h>
 #endif
 #include <TargetConditionals.h>
 #include "MachOFile.h"
@@ -75,7 +75,7 @@ bool FileSystemPhysical::getRealPath(const char possiblePath[MAXPATHLEN], char r
 
 static bool sandboxBlocked(const char* path, const char* kind)
 {
-#if TARGET_OS_SIMULATOR || TARGET_OS_DRIVERKIT
+#if 1 // TARGET_OS_SIMULATOR || TARGET_OS_DRIVERKIT
     // sandbox calls not yet supported in dyld_sim
     return false;
 #else
