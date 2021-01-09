@@ -30,7 +30,7 @@
 #include <mach-o/dyld_priv.h>
 #include <sys/stat.h>
 #include <sys/sysctl.h>
-#include <System/machine/cpu_capabilities.h>
+//#include <System/machine/cpu_capabilities.h>
 //#include <_simple.h>
 
 extern "C" {
